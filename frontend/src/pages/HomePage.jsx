@@ -1,23 +1,29 @@
-import React from 'react'
-import { useChatStore } from '../store/useChatStore'
-import Sidebar from '../components/Sidebar';
-import NoChatSelectde from '../components/NoChatSelectde';
-import ChatContainer from '../components/ChatContainer';
+import React from "react";
+import { useChatStore } from "../store/useChatStore";
+import Sidebar from "../components/Sidebar";
+import NoChatSelectde from "../components/NoChatSelectde";
+import ChatContainer from "../components/ChatContainer";
 
 const HomePage = () => {
-  const { selectedUser } =useChatStore();
+  const { selectedUser } = useChatStore();
   return (
-    <div className="h-screen bg-base-200 w-screen">
-      <div className="flex items-center justify-center pt-20 px-4">
-        <div className="bg-base-100 rounded-lg shadow-xl w-full max-w-6xl h-[calc(100vh-8rem)]">
-          <div className="flex h-full rounded-lg overflow-hidden">
-            <Sidebar />
-            {!selectedUser ? <NoChatSelectde /> : <ChatContainer />}
-          </div>
-        </div>
+    <div className="flex w-full h-full min-w-0 bg-background overflow-hidden">
+      {/* Sidebar: search fixed on top, contact list scrolls; hidden on mobile when chat open */}
+      <div
+        className={
+          selectedUser
+            ? "hidden sm:flex sm:w-80 md:w-96 flex-shrink-0 flex-col h-full min-h-0 overflow-hidden"
+            : "flex w-full sm:w-80 md:w-96 flex-shrink-0 flex-col h-full min-h-0 overflow-hidden"
+        }
+      >
+        <Sidebar />
+      </div>
+      {/* Chat area: always takes remaining space so layout never collapses */}
+      <div className="flex-1 min-w-0 min-h-0 flex flex-col overflow-hidden">
+        {!selectedUser ? <NoChatSelectde /> : <ChatContainer />}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

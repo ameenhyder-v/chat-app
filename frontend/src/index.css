@@ -1,3 +1,242 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /* Default (before theme applied) = Caffeine light */
+  :root {
+    --background: oklch(0.9821 0 0);
+    --foreground: oklch(0.2435 0 0);
+    --card: oklch(0.9911 0 0);
+    --card-foreground: oklch(0.2435 0 0);
+    --primary: oklch(0.4341 0.0392 41.9938);
+    --primary-foreground: oklch(1 0 0);
+    --secondary: oklch(0.92 0.0651 74.3695);
+    --secondary-foreground: oklch(0.3499 0.0685 40.8288);
+    --muted: oklch(0.9521 0 0);
+    --muted-foreground: oklch(0.5032 0 0);
+    --accent: oklch(0.931 0 0);
+    --accent-foreground: oklch(0.2435 0 0);
+    --destructive: oklch(0.6271 0.1936 33.339);
+    --destructive-foreground: oklch(1 0 0);
+    --border: oklch(0.8822 0 0);
+    --input: oklch(0.8822 0 0);
+    --ring: oklch(0.4341 0.0392 41.9938);
+    --radius: 0.5rem;
+    --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --tracking-normal: 0em;
+  }
+
+  /* Caffeine (tweakcn) — system UI fonts, 0 letter-spacing */
+  [data-theme="caffeine-light"] {
+    --background: oklch(0.9821 0 0);
+    --foreground: oklch(0.2435 0 0);
+    --card: oklch(0.9911 0 0);
+    --card-foreground: oklch(0.2435 0 0);
+    --primary: oklch(0.4341 0.0392 41.9938);
+    --primary-foreground: oklch(1 0 0);
+    --secondary: oklch(0.92 0.0651 74.3695);
+    --secondary-foreground: oklch(0.3499 0.0685 40.8288);
+    --muted: oklch(0.9521 0 0);
+    --muted-foreground: oklch(0.5032 0 0);
+    --accent: oklch(0.931 0 0);
+    --accent-foreground: oklch(0.2435 0 0);
+    --destructive: oklch(0.6271 0.1936 33.339);
+    --destructive-foreground: oklch(1 0 0);
+    --border: oklch(0.8822 0 0);
+    --input: oklch(0.8822 0 0);
+    --ring: oklch(0.4341 0.0392 41.9938);
+    --radius: 0.5rem;
+    --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --tracking-normal: 0em;
+  }
+
+  [data-theme="caffeine-dark"] {
+    --background: oklch(0.1776 0 0);
+    --foreground: oklch(0.9491 0 0);
+    --card: oklch(0.2134 0 0);
+    --card-foreground: oklch(0.9491 0 0);
+    --primary: oklch(0.9247 0.0524 66.1732);
+    --primary-foreground: oklch(0.2029 0.024 200.1962);
+    --secondary: oklch(0.3163 0.019 63.6992);
+    --secondary-foreground: oklch(0.9247 0.0524 66.1732);
+    --muted: oklch(0.252 0 0);
+    --muted-foreground: oklch(0.7699 0 0);
+    --accent: oklch(0.285 0 0);
+    --accent-foreground: oklch(0.9491 0 0);
+    --destructive: oklch(0.6271 0.1936 33.339);
+    --destructive-foreground: oklch(1 0 0);
+    --border: oklch(0.2351 0.0115 91.7467);
+    --input: oklch(0.4017 0 0);
+    --ring: oklch(0.9247 0.0524 66.1732);
+    --radius: 0.5rem;
+    --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --tracking-normal: 0em;
+  }
+
+  /* Notebook (tweakcn) — Architects Daughter, Times New Roman, Courier / Fira Code, 0.5px letter-spacing */
+  [data-theme="notebook-light"] {
+    --background: oklch(0.9821 0 0);
+    --foreground: oklch(0.3485 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.3485 0 0);
+    --primary: oklch(0.4891 0 0);
+    --primary-foreground: oklch(0.9551 0 0);
+    --secondary: oklch(0.9006 0 0);
+    --secondary-foreground: oklch(0.3485 0 0);
+    --muted: oklch(0.9158 0 0);
+    --muted-foreground: oklch(0.4313 0 0);
+    --accent: oklch(0.9354 0.0456 94.8549);
+    --accent-foreground: oklch(0.4015 0.0436 37.9587);
+    --destructive: oklch(0.6627 0.0978 20.0041);
+    --destructive-foreground: oklch(1 0 0);
+    --border: oklch(0.5538 0.0025 17.232);
+    --input: oklch(1 0 0);
+    --ring: oklch(0.7058 0 0);
+    --radius: 0.625rem;
+    --font-sans: "Architects Daughter", sans-serif;
+    --font-serif: "Times New Roman", Times, serif;
+    --font-mono: "Courier New", Courier, monospace;
+    --tracking-normal: 0.5px;
+  }
+
+  [data-theme="notebook-dark"] {
+    --background: oklch(0.2891 0 0);
+    --foreground: oklch(0.8945 0 0);
+    --card: oklch(0.3211 0 0);
+    --card-foreground: oklch(0.8945 0 0);
+    --primary: oklch(0.7572 0 0);
+    --primary-foreground: oklch(0.2891 0 0);
+    --secondary: oklch(0.4676 0 0);
+    --secondary-foreground: oklch(0.8078 0 0);
+    --muted: oklch(0.3904 0 0);
+    --muted-foreground: oklch(0.78 0 0);
+    --accent: oklch(0.9067 0 0);
+    --accent-foreground: oklch(0.3211 0 0);
+    --destructive: oklch(0.7915 0.0491 18.241);
+    --destructive-foreground: oklch(0.2891 0 0);
+    --border: oklch(0.4276 0 0);
+    --input: oklch(0.3211 0 0);
+    --ring: oklch(0.8078 0 0);
+    --radius: 0.625rem;
+    --font-sans: "Architects Daughter", sans-serif;
+    --font-serif: Georgia, serif;
+    --font-mono: "Fira Code", "Courier New", monospace;
+    --tracking-normal: 0.5px;
+  }
+
+  html {
+    @apply antialiased;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--foreground);
+    letter-spacing: var(--tracking-normal);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+
+  code, kbd, pre {
+    font-family: var(--font-mono);
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+  }
+  .btn-sm {
+    @apply h-8 px-3 text-sm;
+  }
+  .btn-md {
+    @apply h-9 px-4;
+  }
+  .btn-lg {
+    @apply h-10 px-6;
+  }
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:opacity-90;
+  }
+  .btn-ghost {
+    @apply hover:bg-accent hover:text-accent-foreground;
+  }
+  .btn-circle {
+    @apply rounded-full h-8 w-8 p-0;
+  }
+  .input {
+    @apply flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+  }
+  .checkbox {
+    @apply h-4 w-4 rounded border border-input accent-primary;
+  }
+  .label {
+    @apply text-sm font-medium leading-none;
+  }
+  .card {
+    @apply rounded-lg border border-border bg-card text-card-foreground;
+  }
+  /* WhatsApp-style message bubbles: content-sized, tail on corner */
+  .chat-bubble {
+    width: fit-content;
+    max-width: 85%;
+    @apply rounded-[18px] px-3 py-1.5 pt-2 shadow-sm bg-muted;
+    box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.08);
+  }
+  .chat.chat-end .chat-bubble {
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 18px;
+  }
+  .chat.chat-start .chat-bubble {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 18px;
+  }
+  .chat-bubble-primary {
+    @apply bg-primary text-primary-foreground;
+  }
+  .chat.chat-end {
+    @apply flex justify-end;
+  }
+  .chat.chat-start {
+    @apply flex justify-start;
+  }
+  /* WhatsApp chat area background */
+  .chat-area-bg {
+    background-color: var(--muted);
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@keyframes skeleton-shimmer {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.skeleton {
+  background-color: var(--muted);
+  border-radius: var(--radius);
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+.overflow-y-auto {
+  scroll-behavior: smooth;
+}

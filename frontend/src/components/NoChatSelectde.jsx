@@ -1,27 +1,20 @@
-
-import { MessageSquare } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 const NoChatSelected = () => {
   return (
-    <div className="w-full flex flex-1 flex-col items-center justify-center p-16 bg-base-100/50">
-      <div className="max-w-md text-center space-y-6">
-        {/* Icon Display */}
-        <div className="flex justify-center gap-4 mb-4">
-          <div className="relative">
-            <div
-              className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center
-             justify-center animate-bounce"
-            >
-              <MessageSquare className="w-8 h-8 text-primary " />
-            </div>
+    <div className="flex-1 flex flex-col items-center justify-center p-6 chat-area-bg">
+      <div className="max-w-sm text-center space-y-4">
+        <div className="flex justify-center">
+          <div className="size-20 rounded-full bg-card border border-border flex items-center justify-center shadow-sm">
+            <MessageCircle className="size-10 text-muted-foreground" strokeWidth={1.5} />
           </div>
         </div>
-
-        {/* Welcome Text */}
-        <h2 className="text-2xl font-bold">Welcome to Chatty!</h2>
-        <p className="text-base-content/60">
-          Select a conversation from the sidebar to start chatting
-        </p>
+        <div>
+          <h2 className="text-lg font-medium text-foreground">Keep your phone connected</h2>
+          <p className="text-sm text-muted-foreground mt-1">
+            Chatty connects to your chats. Select a chat from the list to start messaging.
+          </p>
+        </div>
       </div>
     </div>
   );

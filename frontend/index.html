@@ -4,9 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chatty</title>
+    <meta name="theme-color" content="#0f172a" />
+    <title>Chatty — Real-time chat</title>
+    <script
+      crossorigin="anonymous"
+      src="https://tweakcn.com/live-preview.min.js"
+    ></script>
   </head>
   <body>
+    <script>
+      (function () {
+        var valid = ["caffeine-light", "caffeine-dark", "notebook-light", "notebook-dark"];
+        var t = localStorage.getItem("chat-theme");
+        if (t && valid.indexOf(t) !== -1) document.documentElement.setAttribute("data-theme", t);
+        else document.documentElement.setAttribute("data-theme", "caffeine-light");
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
